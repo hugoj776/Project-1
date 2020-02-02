@@ -17,9 +17,9 @@ public abstract class Game
     private final String gameName;//the title of the game
     private ArrayList <Player> players;// the players of the game
     
-    public Game(String givenName)
+    public Game(String BlackJack)
     {
-        gameName = givenName;
+        gameName = BlackJack;
         players = new ArrayList();
     }
 

@@ -14,6 +14,7 @@ package ca.sheridancollege.project;
 public abstract class Card 
 {
     
+  
         public enum Suits {red, yellow, green, blue};
         public enum Value{ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JOKER, QUEEN, KING};
         private final Suits suits;
@@ -24,9 +25,14 @@ public abstract class Card
            suits =s;
            value= gVal;
         }
-
-
-	
+        private int handSize = 52; //sets max card amount to 60
+	public Card[] cards = new Card[handSize]; 
+    //default modifier for child classes
+    
+    /**
+     * Students should implement this method for their specific children classes 
+     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
+     */
 
     @Override
     public abstract String toString();
