@@ -1,3 +1,4 @@
+//this class is to create the the game and its rules
 /**
  * SYST 17796 Project Winter 2019 Base code.
  * Students can modify and extend to implement their game.

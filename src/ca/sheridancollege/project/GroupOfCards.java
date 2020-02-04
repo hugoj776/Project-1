@@ -19,7 +19,7 @@ public class GroupOfCards
    
     //The group of cards, stored in an ArrayList
     private ArrayList <Card> cards;
-    private int size;//the size of the grouping
+    private int size = 52;//the size of the grouping
     
     public GroupOfCards(int givenSize)
     {
