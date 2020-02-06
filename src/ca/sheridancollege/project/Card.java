@@ -13,7 +13,7 @@ package ca.sheridancollege.project;
  *
  * @author dancye, 2018
  */
-public abstract class Card {
+public class Card {
 
     public enum Suits {
         HEARTS, SPADES, CLUBS, DIAMONDS
@@ -48,7 +48,6 @@ public abstract class Card {
      * @return a String representation of a card. Could be an UNO card, a
      * regular playing card etc.
      */
-    @Override
-    public abstract String toString();
+  
 
 }

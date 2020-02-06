@@ -13,8 +13,17 @@ public class PlayGame {
         
     System.out.println("Welcome to Black Jack!");
     System.out.print("Enter your player id: ");
-    
     System.out.println("");
+    GroupOfCards ch = new GroupOfCards(1);
+                
+                //create 52 Cards
+                ch.generateDeck();
+                
+                
+                for(Card c: ch.cards)
+                {
+                    System.out.println(c.getValues() + " of " + c.getSuits());
+                }
     
     }
 }
