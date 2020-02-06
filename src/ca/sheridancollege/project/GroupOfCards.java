@@ -20,7 +20,8 @@ public class GroupOfCards
     //The group of cards, stored in an ArrayList
     private int size = 52;//the size of the grouping
     public Card[] cards = new Card[size]; 
-   
+   private int HandSize = 2;
+    public Card[] playerCards = new Card[HandSize]; 
     
     public GroupOfCards(int givenSize)
     {
@@ -38,7 +39,6 @@ public class GroupOfCards
                 containing all the values of the enum.
                 */
                 
-                
 		for(Card.Suits s: Card.Suits.values())//loop to change card number for each "countCards"
                 {
                     for(Card.Value v: Card.Value.values())//loop to change card number for each "countCards"
@@ -50,7 +50,11 @@ public class GroupOfCards
                         countCards++; // increased "countcards" so another int is givin an uno card object
                     }
                 }//end outter for
+                
             }
+          public void generateHand(){ //creates hand by making new array out of randomly selected arrays from card deck/array
+      //create object with 2 cards from cards array
+          }
     /**
      * A method that will get the group of cards as an ArrayList
      * @return the group of cards.
