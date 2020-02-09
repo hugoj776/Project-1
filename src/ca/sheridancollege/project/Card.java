@@ -27,7 +27,7 @@ public class Card {
         this.crdVal = crdVal;
     }
 
-    public int getNumVal() {
+    public int getCrdVal() {
         return crdVal;
     }
     };

@@ -20,27 +20,27 @@ public class GroupOfCards
 {
     //The group of cards, stored in an ArrayList
     private int size = 52;//the size of the grouping
-    ArrayList <Card> cards = new ArrayList<>();
-
+    ArrayList <Card> cards = new ArrayList<Card>();
+    ArrayList playersHand = new ArrayList();
+    ArrayList cpuHand = new ArrayList();
+    
     public GroupOfCards(int givenSize)
     {
         size = givenSize;
     }
     
-    ArrayList<Card> createDeck(){
-        for (Suits s : Suits.values()){
-    for (Value val : Value.values()){
-            cards.add(new Card(s, val));
-        }
-    }
-    return cards;
-    }
+    
     /**
      * A method that will get the group of cards as an ArrayList
      * @return the group of cards.
      */
     public ArrayList<Card> showCards()
     {
+            for (Suits s : Suits.values()){
+    for (Value val : Value.values()){
+            cards.add(new Card(s, val));
+        }
+    }
         return cards;
     }
     
@@ -62,7 +62,10 @@ public class GroupOfCards
     public void setSize(int givenSize) {
         size = givenSize;
     }
-    
+     public ArrayList dealPlayerCards(){
+  
+        
+    }
     
     
 }//end class

@@ -16,22 +16,26 @@ public class PlayGame {
         GroupOfCards deck = new GroupOfCards(0);
         Game gme = new Game("Black Jack");
         
-        deck.createDeck();
+        deck.showCards();
         deck.shuffle();
 
         System.out.println("Welcome to " + gme.getGameName() + "!");
         System.out.println("Enter your Player id:");
         String id = sc.next();
         Player player = new Player(id);
-        System.out.println(player.getPlayerID());
+       
         
         
-        
-            /*
-    for (Card num : me.cards) { 		      
+         for (Card num : deck.cards) { 		      
            System.out.println(num.getValues() + " of " + num.getSuits());		
       }
-         */
+        
+        
+      
+           
+        
+            
+   
 
     }
 }
