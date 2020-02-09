@@ -12,16 +12,19 @@ public class PlayGame {
         Scanner sc = new Scanner(System.in);
         
     System.out.println("Welcome to Black Jack!");
-    System.out.print("Enter your player id: ");
     System.out.println("");
     GroupOfCards me = new GroupOfCards(1);
+    me.createDeck();
+    System.out.println(me);
                //create 52 Cards
-                me.generateHand();
+             
+               
+               /*   me.generateHand();
                 for(Card c: me.cards)
                 {
                     System.out.println(c.getValues() + " of " + c.getSuits());
                 }
-             /*   for(Card c: ch.cards)
+               for(Card c: ch.cards)
                 {
                     System.out.println(c.getValues() + " of " + c.getSuits());
                 }
