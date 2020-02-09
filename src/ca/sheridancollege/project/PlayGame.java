@@ -22,29 +22,13 @@ public class PlayGame {
         System.out.println("Enter your Player id:");
         String id = sc.next();
         Player player1 = new Player(id);
-       
+        
+       deck.deal();
+       System.out.println(deck.toStringPHand());
 
-
-        System.out.println(deck.toString());
-        
-
-//        ArrayList<GroupOfCards> playerHand = deck.dealCards(2);
-//
-//        for(GroupOfCards playercards : playerHand)
-//        {
-//            System.out.println(playercards);
-//        }
-        
-//         for (Card num : deck.cards) { 		      
-//           System.out.println(num.getValues() + " of " + num.getSuits());		
-//      }
-        
-        
-      
-           
-        
-            
+                 
    
 
     }
+    
 }

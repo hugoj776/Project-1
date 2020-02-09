@@ -23,8 +23,8 @@ public class GroupOfCards {
     //The group of cards, stored in an ArrayList
     private int size = 52;//the size of the grouping
     ArrayList<Card> cards = new ArrayList<Card>();
-    ArrayList playersHand = new ArrayList();
-    ArrayList cpuHand = new ArrayList();
+    ArrayList<Card> pHand = new ArrayList<Card>();
+    ArrayList<Card> cpuHand = new ArrayList<Card>();
 
     public GroupOfCards(int givenSize) {
         size = givenSize;
@@ -40,7 +40,7 @@ public class GroupOfCards {
             for (Value val : Value.values()) {
                 cards.add(new Card(s, val));
             }
-        }
+        } shuffle();
     }
 
     public void shuffle() {
@@ -66,8 +66,9 @@ public class GroupOfCards {
     }
 
     public void addCard(Card card) {
-    cards.add(card);
-}
+        cards.add(card);
+    }
+
     public Card popCard(int i) {
         return cards.remove(i);
     }
@@ -76,11 +77,22 @@ public class GroupOfCards {
         int i = size() - 1;
         return popCard(i);
     }
+
     public int size() {
         return cards.size();
     }
-    
 
+    public void deal() {
+        for (int i = 0; i < 2; i++) {
+            cards.remove(cards.size() - 1);
+            Card a = cards.remove(cards.size() - 1);;
+            pHand.add(a);
+            
+            cards.remove(cards.size() - 1);
+            Card b = cards.remove((cards.size() - 1));
+            cpuHand.add(b);
+        }
+    }
 
 
 
@@ -106,6 +118,15 @@ public class GroupOfCards {
     public String toString() {
         String cardamount = cards.size() + " cards:" + "\n";
         for (Card card : cards) {
+            cardamount = cardamount + card.getValues() + " of " + card.getSuits() + "\n";
+        }
+
+        return cardamount;
+    }
+
+    public String toStringPHand() {
+        String cardamount = pHand.size() + " cards:" + "\n";
+        for (Card card : pHand) {
             cardamount = cardamount + card.getValues() + " of " + card.getSuits() + "\n";
         }
 
