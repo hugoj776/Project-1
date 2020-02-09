@@ -25,7 +25,9 @@ public class PlayGame {
         
        deck.deal();
        System.out.println(deck.toStringPHand());
-
+       System.out.println(deck.toString());
+       //var int i = 1+Value.values(0);
+       
                  
    
 

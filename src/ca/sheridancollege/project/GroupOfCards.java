@@ -40,7 +40,7 @@ public class GroupOfCards {
             for (Value val : Value.values()) {
                 cards.add(new Card(s, val));
             }
-        } shuffle();
+        } //shuffle();//////////////////////////
     }
 
     public void shuffle() {
@@ -84,13 +84,11 @@ public class GroupOfCards {
 
     public void deal() {
         for (int i = 0; i < 2; i++) {
-            cards.remove(cards.size() - 1);
-            Card a = cards.remove(cards.size() - 1);;
-            pHand.add(a);
+          Card a = cards.remove(cards.size() - 1);
+           pHand.add(a);
             
-            cards.remove(cards.size() - 1);
-            Card b = cards.remove((cards.size() - 1));
-            cpuHand.add(b);
+            a = cards.remove(cards.size() - 1);
+            cpuHand.add(a);
         }
     }
 
