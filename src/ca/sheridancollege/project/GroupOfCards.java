@@ -8,44 +8,42 @@ package ca.sheridancollege.project;
 import ca.sheridancollege.project.Card.Suits;
 import ca.sheridancollege.project.Card.Value;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
 /**
- * A concrete class that represents any grouping of cards for a Game.
- * HINT, you might want to subclass this more than once.
- * The group of cards has a maximum size attribute which is flexible for reuse.
+ * A concrete class that represents any grouping of cards for a Game. HINT, you
+ * might want to subclass this more than once. The group of cards has a maximum
+ * size attribute which is flexible for reuse.
+ *
  * @author dancye
  */
-public class GroupOfCards
-{
+public class GroupOfCards {
+
     //The group of cards, stored in an ArrayList
     private int size = 52;//the size of the grouping
-    ArrayList <Card> cards = new ArrayList<Card>();
+    ArrayList<Card> cards = new ArrayList<Card>();
     ArrayList playersHand = new ArrayList();
     ArrayList cpuHand = new ArrayList();
-    
-    public GroupOfCards(int givenSize)
-    {
+
+    public GroupOfCards(int givenSize) {
         size = givenSize;
     }
-    
-    
+
     /**
      * A method that will get the group of cards as an ArrayList
+     *
      * @return the group of cards.
      */
-    public ArrayList<Card> showCards()
-    {
-            for (Suits s : Suits.values()){
-    for (Value val : Value.values()){
-            cards.add(new Card(s, val));
+    GroupOfCards() {
+        for (Suits s : Suits.values()) {
+            for (Value val : Value.values()) {
+                cards.add(new Card(s, val));
+            }
         }
     }
-        return cards;
-    }
-    
-    public void shuffle()
-    {
+
+    public void shuffle() {
         Collections.shuffle(cards);
     }
 
@@ -62,10 +60,56 @@ public class GroupOfCards
     public void setSize(int givenSize) {
         size = givenSize;
     }
-     public ArrayList dealPlayerCards(){
-  
-        
+
+    GroupOfCards(Collection<? extends Card> cards) {
+        this.cards = new ArrayList<Card>(cards);
+    }
+
+    public void addCard(Card card) {
+    cards.add(card);
+}
+    public Card popCard(int i) {
+        return cards.remove(i);
+    }
+
+    public Card popCard() {
+        int i = size() - 1;
+        return popCard(i);
+    }
+    public int size() {
+        return cards.size();
     }
     
-    
+
+
+
+
+//    public ArrayList<GroupOfCards> dealCards(int playeramnt) {
+//        ArrayList<GroupOfCards> playerHand = new ArrayList<>(playeramnt);
+//        ArrayList<Card> deckShuffled = new ArrayList<>(cards);
+//
+//        int dealtAmnt = deckShuffled.size()/playeramnt;
+//        int remainingCards = deckShuffled.size() % playeramnt;
+//        Collections.shuffle(deckShuffled);
+//
+//        for (int p = 0; p < playeramnt; ++p) {
+//            if (p == remainingCards) {
+//                --dealtAmnt;
+//            }
+//            GroupOfCards phand = new GroupOfCards (deckShuffled.subList(0, dealtAmnt + 1));
+//            deckShuffled.removeAll(phand.cards);
+//            
+//            playerHand.add(phand);
+//        }
+//        return playerHand;
+//    }
+    public String toString() {
+        String cardamount = cards.size() + " cards:" + "\n";
+        for (Card card : cards) {
+            cardamount = cardamount + card.getValues() + " of " + card.getSuits() + "\n";
+        }
+
+        return cardamount;
+    }
+
 }//end class
