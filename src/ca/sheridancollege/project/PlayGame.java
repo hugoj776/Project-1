@@ -5,23 +5,33 @@
  * and open the template in the editor.
  */
 package ca.sheridancollege.project;
+
 import java.util.Scanner;
 
 public class PlayGame {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        GroupOfCards deck = new GroupOfCards(0);
+        Game gme = new Game("Black Jack");
         
-    System.out.println("Welcome to Black Jack!");
-    System.out.println("");
-    GroupOfCards me = new GroupOfCards(0);
-   me.createDeck();
+        deck.createDeck();
+        deck.shuffle();
+
+        System.out.println("Welcome to " + gme.getGameName() + "!");
+        System.out.println("Enter your Player id:");
+        String id = sc.next();
+        Player player = new Player(id);
+        System.out.println(player.getPlayerID());
+        
+        
+        
+            /*
     for (Card num : me.cards) { 		      
            System.out.println(num.getValues() + " of " + num.getSuits());		
       }
-               //create 52 Cards
-             
-               
-              
-    
+         */
+
     }
 }

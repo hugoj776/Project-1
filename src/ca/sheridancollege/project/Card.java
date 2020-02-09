@@ -20,7 +20,16 @@ public class Card {
     };
 
     public enum Value {
-        ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JOKER, QUEEN, KING
+        ACE(11), TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7), EIGHT(8), NINE(9), TEN(10), JOKER(10), QUEEN(10), KING(10);
+    private final int crdVal;
+
+    Value(int crdVal) {
+        this.crdVal = crdVal;
+    }
+
+    public int getNumVal() {
+        return crdVal;
+    }
     };
     Suits suits;
     Value value;
@@ -37,17 +46,5 @@ public class Card {
     public Suits getSuits() {
         return this.suits;
     }
-
-
-    
-
-    //default modifier for child classes
-    /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a
-     * regular playing card etc.
-     */
-  
 
 }

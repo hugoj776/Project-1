@@ -19,7 +19,7 @@ import java.util.Collections;
 public class GroupOfCards
 {
     //The group of cards, stored in an ArrayList
-    private int size;//the size of the grouping
+    private int size = 52;//the size of the grouping
     ArrayList <Card> cards = new ArrayList<>();
 
     public GroupOfCards(int givenSize)
