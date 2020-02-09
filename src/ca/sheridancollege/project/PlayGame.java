@@ -13,22 +13,15 @@ public class PlayGame {
         
     System.out.println("Welcome to Black Jack!");
     System.out.println("");
-    GroupOfCards me = new GroupOfCards(1);
-    me.createDeck();
-    System.out.println(me);
+    GroupOfCards me = new GroupOfCards(0);
+   me.createDeck();
+    for (Card num : me.cards) { 		      
+           System.out.println(num.getValues() + " of " + num.getSuits());		
+      }
                //create 52 Cards
              
                
-               /*   me.generateHand();
-                for(Card c: me.cards)
-                {
-                    System.out.println(c.getValues() + " of " + c.getSuits());
-                }
-               for(Card c: ch.cards)
-                {
-                    System.out.println(c.getValues() + " of " + c.getSuits());
-                }
-             */
+              
     
     }
 }

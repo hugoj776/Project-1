@@ -28,9 +28,9 @@ public class GroupOfCards
     }
     
     ArrayList<Card> createDeck(){
-    for (Value val : Value.values()){
         for (Suits s : Suits.values()){
-            cards.add(new Card(val, s));
+    for (Value val : Value.values()){
+            cards.add(new Card(s, val));
         }
     }
     return cards;

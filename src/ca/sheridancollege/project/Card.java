@@ -15,8 +15,6 @@ package ca.sheridancollege.project;
  */
 public class Card {
 
-  
-
     public enum Suits {
         HEARTS, SPADES, CLUBS, DIAMONDS
     };
@@ -24,15 +22,21 @@ public class Card {
     public enum Value {
         ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JOKER, QUEEN, KING
     };
-    Value value;
     Suits suits;
+    Value value;
 
-    Card(Value val, Suits s) {
-        value = val;
+    Card(Suits s, Value val) {
         suits = s;
+        value = val;
     }
 
- 
+    public Value getValues() {
+        return this.value;
+    }
+
+    public Suits getSuits() {
+        return this.suits;
+    }
 
 
     
