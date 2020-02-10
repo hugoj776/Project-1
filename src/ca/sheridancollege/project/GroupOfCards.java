@@ -39,8 +39,9 @@ public class GroupOfCards {
         for (Suits s : Suits.values()) {
             for (Value val : Value.values()) {
                 cards.add(new Card(s, val));
+                shuffle();
             }
-        } shuffle();
+        }
     }
 
     public void shuffle() {
@@ -61,38 +62,19 @@ public class GroupOfCards {
         size = givenSize;
     }
 
-    GroupOfCards(Collection<? extends Card> cards) {
-        this.cards = new ArrayList<Card>(cards);
-    }
-
-    public void addCard(Card card) {
-        cards.add(card);
-    }
-
-    public Card popCard(int i) {
-        return cards.remove(i);
-    }
-
-    public Card popCard() {
-        int i = size() - 1;
-        return popCard(i);
-    }
-
     public int size() {
         return cards.size();
     }
 
     public void deal() {
         for (int i = 0; i < 2; i++) {
-          Card a = cards.remove(cards.size() - 1);
-           pHand.add(a);
-            
+            Card a = cards.remove(cards.size() - 1);
+            pHand.add(a);
+
             a = cards.remove(cards.size() - 1);
             cpuHand.add(a);
         }
     }
-
-
 
 //    public ArrayList<GroupOfCards> dealCards(int playeramnt) {
 //        ArrayList<GroupOfCards> playerHand = new ArrayList<>(playeramnt);
@@ -123,24 +105,55 @@ public class GroupOfCards {
     }
 
     public String toStringPHand() {
-        String cardamount = pHand.size() + " cards:" + "\n";
+        String cardamount = "you have " + pHand.size() + " cards:" + "\n";
         for (Card card : pHand) {
             cardamount = cardamount + card.getValues() + " of " + card.getSuits() + "\n";
         }
 
         return cardamount;
     }
-    public int addHand() {
+
+    public String devtoStringCpuHand() {
+        String cardamount = "Opponent has " + cpuHand.size() + " cards:" + "\n";
+        for (Card card : cpuHand) {
+            cardamount = cardamount + card.getValues() + " of " + card.getSuits() + "\n";
+        }
+
+        return cardamount;
+    }
+
+    public String toStringCpuHand() {
+        String cardamount = "Opponent has " + cpuHand.size() + " cards:" + "\n";
+        
+        for (Card card : cpuHand) {
+            cardamount = cardamount + card.getValues() + " of " + card.getSuits() + "\n" + "second card is hidden" + "\n";
+            break;
+        }
+        
+
+        return cardamount;
+    }
+
+    public int paddHand() {
         int card2 = 0;
         int cardtotal = 0;
         for (Card card : pHand) {
             card2 = card.getint();
-        cardtotal += card2;
+            cardtotal += card2;
         }
-        
 
         return cardtotal;
     }
-   
+
+    public int cpuaddHand() {
+        int card2 = 0;
+        int cardtotal = 0;
+        for (Card card : cpuHand) {
+            card2 = card.getint();
+            cardtotal += card2;
+        }
+
+        return cardtotal;
+    }
 
 }//end class

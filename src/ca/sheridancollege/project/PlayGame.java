@@ -16,22 +16,30 @@ public class PlayGame {
 
         GroupOfCards deck = new GroupOfCards();
         Game gme = new Game("Black Jack");
-       
 
         System.out.println("Welcome to " + gme.getGameName() + "!");
         System.out.println("Enter your Player id:");
-        //String id = sc.next();
-        //Player player1 = new Player(id);
-        
-       deck.deal();
-       System.out.println(deck.toStringPHand());
-       System.out.println(deck.toString());
-       System.out.println(deck.addHand());
-       //var int i = 1+Value.values(0);
+        String id = sc.next();
+        Player player1 = new Player(id);
+
+        int start = 0;
+
+        System.out.println("enter 1 if you want to start the game!");
+        //start = sc.nextInt();
+        //do {
+            System.out.println("Dealing cards" + "\n");
+            deck.deal();
+            System.out.println(deck.toStringPHand()); //displays players hand
+            
+            
+       // } while (start == 1);
+
+             System.out.println(deck.toStringCpuHand()); //displays players hand
+        System.out.println(deck.paddHand()); //displays players hand in total value
+        System.out.println(deck.cpuaddHand()); //displays players hand in total value
+        System.out.println(deck.toString());//displays deck
        
-                 
-   
 
     }
-    
+
 }
