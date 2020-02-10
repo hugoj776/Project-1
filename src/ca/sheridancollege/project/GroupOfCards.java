@@ -40,7 +40,7 @@ public class GroupOfCards {
             for (Value val : Value.values()) {
                 cards.add(new Card(s, val));
             }
-        } //shuffle();//////////////////////////
+        } shuffle();
     }
 
     public void shuffle() {
@@ -130,5 +130,17 @@ public class GroupOfCards {
 
         return cardamount;
     }
+    public int addHand() {
+        int card2 = 0;
+        int cardtotal = 0;
+        for (Card card : pHand) {
+            card2 = card.getint();
+        cardtotal += card2;
+        }
+        
+
+        return cardtotal;
+    }
+   
 
 }//end class

@@ -20,12 +20,13 @@ public class PlayGame {
 
         System.out.println("Welcome to " + gme.getGameName() + "!");
         System.out.println("Enter your Player id:");
-        String id = sc.next();
-        Player player1 = new Player(id);
+        //String id = sc.next();
+        //Player player1 = new Player(id);
         
        deck.deal();
        System.out.println(deck.toStringPHand());
        System.out.println(deck.toString());
+       System.out.println(deck.addHand());
        //var int i = 1+Value.values(0);
        
                  
