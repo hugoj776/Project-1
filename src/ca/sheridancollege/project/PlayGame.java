@@ -20,26 +20,26 @@ public class PlayGame {
         System.out.println("Welcome to " + gme.getGameName() + "!");
         System.out.println("Enter your Player id:");
         String id = sc.next();
-        Player player1 = new Player(id);
+        Player player = new Player(id);
 
         int start = 0;
 
         System.out.println("enter 1 if you want to start the game!");
         //start = sc.nextInt();
         //do {
-            System.out.println("Dealing cards" + "\n");
-            deck.deal();
-            System.out.println(deck.toStringPHand()); //displays players hand
-            
-            
-       // } while (start == 1);
-
-             System.out.println(deck.toStringCpuHand()); //displays players hand
-        System.out.println(deck.paddHand()); //displays players hand in total value
-        System.out.println(deck.cpuaddHand()); //displays players hand in total value
-        System.out.println(deck.toString());//displays deck
+        System.out.println("Dealing cards" + "\n");
+        deck.deal();
        
-
+        System.out.println(deck.toStringCpuHand()); //displays players hand
+        System.out.println("Total = " + deck.cpuaddHand()); //displays players hand in total value
+        System.out.println(deck.toStringPHand()); //displays players hand
+        System.out.println("Total = " + deck.paddHand()); //displays players hand in total value
+        
+        gme.choice(deck.paddHand(), deck.cpuaddHand(), deck, player); // checks if player won based on draw
+        
+        
+        
+        // } while (start == 1);
     }
 
 }

@@ -75,7 +75,20 @@ public class GroupOfCards {
             cpuHand.add(a);
         }
     }
-
+    
+    public void hit() {
+        for (int i = 0; i < 1; i++) {
+            Card a = cards.remove(cards.size() - 1);
+            pHand.add(a);
+        }
+    }
+    
+    public void cpuhit() {
+        for (int i = 0; i < 1; i++) {
+            Card a = cards.remove(cards.size() - 1);
+            cpuHand.add(a);
+        }
+    }
 //    public ArrayList<GroupOfCards> dealCards(int playeramnt) {
 //        ArrayList<GroupOfCards> playerHand = new ArrayList<>(playeramnt);
 //        ArrayList<Card> deckShuffled = new ArrayList<>(cards);
@@ -133,6 +146,7 @@ public class GroupOfCards {
 
         return cardamount;
     }
+    
 
     public int paddHand() {
         int card2 = 0;
@@ -145,12 +159,24 @@ public class GroupOfCards {
         return cardtotal;
     }
 
+     public int devcpuaddHand() {
+        int card2 = 0;
+        int cardtotal = 0;
+        for (Card card : cpuHand) {
+            card2 = card.getint();
+            cardtotal += card2;
+        }
+
+        return cardtotal;
+    }
+    
     public int cpuaddHand() {
         int card2 = 0;
         int cardtotal = 0;
         for (Card card : cpuHand) {
             card2 = card.getint();
             cardtotal += card2;
+            break;
         }
 
         return cardtotal;
