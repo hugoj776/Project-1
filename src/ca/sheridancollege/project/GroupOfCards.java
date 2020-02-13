@@ -41,7 +41,7 @@ public class GroupOfCards {
         }
     }
 
-    public void shuffle() { //shuffle method that shuffles an arraylist
+    private void shuffle() { //shuffle method that shuffles an arraylist
         Collections.shuffle(cards);
     }
 

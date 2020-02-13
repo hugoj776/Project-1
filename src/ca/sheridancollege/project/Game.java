@@ -20,11 +20,9 @@ import java.util.Scanner;
 public class Game extends GroupOfCards {
 
     private final String gameName;//the title of the game
-    private ArrayList<Player> players = new ArrayList<>();// the players of the game
 
     public Game(String BlackJack) { //constructor for game title and player arraylist
         gameName = BlackJack;
-        players = new ArrayList();
     }
 
   
