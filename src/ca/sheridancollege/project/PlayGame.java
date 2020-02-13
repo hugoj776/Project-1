@@ -3,6 +3,9 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ *
+ * Name: Jonathan Hugo
+ * date: feb/12th/2020
  */
 package ca.sheridancollege.project;
 
@@ -19,14 +22,15 @@ public class PlayGame {
 
         System.out.println("Welcome to " + gme.getGameName() + "!");
         System.out.println("Enter your Player id:");
-        String id = sc.next();
-        Player player = new Player(id);
-
-        int start = 0;
+        String pid = sc.next();
+        Player player = new Player(pid);
+        player.setPlayerID(pid);
+        System.out.println(player.getPlayerID());
+        //int start = 0;
 
         System.out.println("enter 1 if you want to start the game!");
-        //start = sc.nextInt();
-        //do {
+       // start = sc.nextInt();
+       // do {
         System.out.println("Dealing cards" + "\n");
         deck.deal();
        
@@ -39,7 +43,7 @@ public class PlayGame {
         
         
         
-        // } while (start == 1);
+      //  } while (start == 1);
     }
 
 }
