@@ -17,7 +17,6 @@ public class PlayGame {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        GroupOfCards deck = new GroupOfCards();
         Game gme = new Game("Black Jack");
 
         System.out.println("Welcome to " + gme.getGameName() + "!");
@@ -28,22 +27,28 @@ public class PlayGame {
         System.out.println(player.getPlayerID());
         //int start = 0;
 
-        System.out.println("enter 1 if you want to start the game!");
-       // start = sc.nextInt();
-       // do {
-        System.out.println("Dealing cards" + "\n");
+        int start = 2;
+        do {    //do while lloop
+        System.out.println("enter 1 if you want to start the game! or enter 2 to exit the game");
+        start = sc.nextInt();
+            if (start == 2){    //if user inputs 2 then the program ends
+                break;
+                } else if (start == 1){
+        System.out.println("Dealing cards..." + "\n");
+        
+        GroupOfCards deck = new GroupOfCards();
         deck.deal();
-       
+        
         System.out.println(deck.toStringCpuHand()); //displays players hand
         System.out.println("Total = " + deck.cpuaddHand()); //displays players hand in total value
         System.out.println(deck.toStringPHand()); //displays players hand
         System.out.println("Total = " + deck.paddHand()); //displays players hand in total value
-        
+
         gme.choice(deck.paddHand(), deck.cpuaddHand(), deck, player); // checks if player won based on draw
-        
-        
-        
-      //  } while (start == 1);
+            }
+            else
+                System.out.println("NOT A VALID ENTRY!!!");
+        } while (start >= 1 || start < 1); // no matter the entry, the code will loop *unless user CHOOSES to exit by inputting 2
     }
 
 }

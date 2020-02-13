@@ -22,50 +22,34 @@ public class Game extends GroupOfCards {
     private final String gameName;//the title of the game
     private ArrayList<Player> players = new ArrayList<>();// the players of the game
 
-    public Game(String BlackJack) {
+    public Game(String BlackJack) { //constructor for game title and player arraylist
         gameName = BlackJack;
         players = new ArrayList();
     }
 
-    /**
-     * @return the gameName
-     */
-    public String getGameName() {
+  
+    public String getGameName() {   //returns game name
         return gameName;
     }
 
-    /**
-     * @return the players of this game
-     */
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
-
-    /**
-     * @param players the players of this game
-     */
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
-    }
-
     public void cpuchoice(int plyer, int cpu, GroupOfCards deck, Player player) {
-        Scanner sc = new Scanner(System.in);
+        
         if (deck.paddHand() >= 21) { //ai 
 
             System.out.println(deck.devtoStringCpuHand()); //displays players hand
-            System.out.println("Total = " + deck.devcpuaddHand()); //displays players hand in total value
+            System.out.println("Total 1= " + deck.devcpuaddHand()); //displays players hand in total value
 
         } else if (deck.devcpuaddHand() <= 16) {
-            for (int i = 0; deck.devcpuaddHand() <= 16; i++) {
+            for (deck.devcpuaddHand(); deck.devcpuaddHand() <= 16;) {
                 deck.cpuhit();
                 System.out.println(deck.devtoStringCpuHand()); //displays players hand
-                System.out.println("Total =" + deck.devcpuaddHand()); //displays players hand in total value
+                System.out.println("Total 2= " + deck.devcpuaddHand()); //displays players hand in total value
             }
         } else {
-            for (int i = 0; deck.devcpuaddHand() <= 16; i++) {
+            for (int i = 0; i < 1; i++) {
                 deck.cpuhit();
                 System.out.println(deck.devtoStringCpuHand()); //displays players hand
-                System.out.println("Total =" + deck.devcpuaddHand()); //displays players hand in total value
+                System.out.println("Total 3=" + deck.devcpuaddHand()); //displays players hand in total value
             }
         }           
 
@@ -74,13 +58,15 @@ public class Game extends GroupOfCards {
         System.out.println("BUST!");
         } else if ((deck.paddHand() > deck.devcpuaddHand()) && deck.paddHand() <= 21 ) { //announce win or loss
             System.out.println(player.getPlayerID() + " WINS1!"); // PROBLEM doenst work if integer is negative
+            
         } else if ((21 - deck.paddHand() > 21 - deck.devcpuaddHand()) && (21 - deck.devcpuaddHand()) < 0) { //announce win or loss
             System.out.println(player.getPlayerID() + " WINS2!"); // PROBLEM doenst work if integer is negative
         } else if (deck.paddHand() == deck.devcpuaddHand()) {
             System.out.println("PUSH!");
-        } else {
+        } else if ((deck.paddHand() < deck.devcpuaddHand()) && deck.paddHand() <= 21 && deck.devcpuaddHand() <= 21 ){
             System.out.println("DEALER WINS!");
         }
+
     }
 
     public void choice(int plyer, int cpu, GroupOfCards deck, Player player) {

@@ -158,8 +158,7 @@ public class GroupOfCards {
             card2 = card.getint();
             if (card.getint() == 11) { // if Ace is drawn
                 if ((prevdevcpuaddHand() + 11) > 21) { // if the total card value (prevaddhand()) + 11 is greater then 21 then..
-                    cardtotal += 1;             //change the value of ace (11) to 1
-                    return cardtotal;
+                    card2 = 1;             //change the value of ace (11) to 1
 
                 }
             }
@@ -184,5 +183,7 @@ public class GroupOfCards {
 
         return cardtotal;
     }
+    
+   
 
 }//end class
