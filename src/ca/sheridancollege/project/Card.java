@@ -4,7 +4,10 @@
  * Students can modify and extend to implement their game.
  * Add your name as a modifier and the date!
  * 
- * Name: Jonathan Hugo
+ * modified by: Jonathan Hugo
+ *              Gavin Da Silva
+ *              Ishita Ishita
+ *              Sheril Garg
  * date: feb/12th/2020
  */
 package ca.sheridancollege.project;
@@ -16,7 +19,7 @@ package ca.sheridancollege.project;
  *
  * @author dancye, 2018
  */
-public class Card {
+public class Card{
 
     public enum Suits { // "Suits" gets 4 values being the suits on a deck of cards
         HEARTS, SPADES, CLUBS, DIAMONDS

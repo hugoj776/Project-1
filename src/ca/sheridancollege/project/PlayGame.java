@@ -4,7 +4,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  *
- * Name: Jonathan Hugo
+ * Modified by: Jonathan Hugo
+                Gavin Da Silva
+ *              Ishita Ishita
+ *              Sheril Garg
  * date: feb/12th/2020
  */
 package ca.sheridancollege.project;
