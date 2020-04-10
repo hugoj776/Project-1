@@ -133,10 +133,8 @@ public class GroupOfCards {
         int cardtotal = 0;
         for (Card card : pHand) {
             card2 = card.getint();
-            if (card.getint() == 11) { // if Ace is drawn..
-                if ((prevpaddHand() + 11) > 21) {// if the total card value (prevaddhand()) + 11 is greater then 21 then..
-                    card2 = 1;          //change the value of ace (11) to 1
-                }                       
+            if (card.getint() == 11 && (prevpaddHand() + 11) > 21) { // if Ace is drawn..  
+                card2 = 1;          //change the value of ace (11) to 1                   
             }
             cardtotal += card2;
         }
