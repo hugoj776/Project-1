@@ -110,6 +110,7 @@ public class PlayGame extends GroupOfCards
                            System.out.println("You have no more money to bet! Bankrupt!");
                        break;    
                        }
+                       
         }while (start >= 1 || start < 1);
        // no matter the entry, the code will loop *unless user CHOOSES to exit by inputting 2
           

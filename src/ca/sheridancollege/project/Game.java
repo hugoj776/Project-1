@@ -38,19 +38,19 @@ public class Game extends GroupOfCards {
         if (deck.paddHand() >= 21) { //ai 
 
             System.out.println(deck.devtoStringCpuHand()); //displays players hand
-            System.out.println("Total 1= " + deck.devcpuaddHand()); //displays players hand in total value
+            System.out.println("Total = " + deck.devcpuaddHand()); //displays players hand in total value
 
         } else if (deck.devcpuaddHand() <= 16) {
             for (deck.devcpuaddHand(); deck.devcpuaddHand() <= 16;) {
                 deck.cpuhit();
                 System.out.println(deck.devtoStringCpuHand()); //displays players hand
-                System.out.println("Total 2= " + deck.devcpuaddHand()); //displays players hand in total value
+                System.out.println("Total = " + deck.devcpuaddHand()); //displays players hand in total value
             }
         } else {
             for (int i = 0; i < 1; i++) {
                 deck.cpuhit();
                 System.out.println(deck.devtoStringCpuHand()); //displays players hand
-                System.out.println("Total 3=" + deck.devcpuaddHand()); //displays players hand in total value
+                System.out.println("Total = " + deck.devcpuaddHand()); //displays players hand in total value
             }
         }           
 
@@ -58,10 +58,10 @@ public class Game extends GroupOfCards {
         if (deck.paddHand() > 21) {
         System.out.println("BUST!");
         } else if ((deck.paddHand() > deck.devcpuaddHand()) && deck.paddHand() <= 21 ) { //announce win or loss
-            System.out.println(player.getPlayerID() + " WINS1!"); // PROBLEM doenst work if integer is negative
+            System.out.println(player.getPlayerID() + " WINS!"); // PROBLEM doenst work if integer is negative
             
         } else if ((21 - deck.paddHand() > 21 - deck.devcpuaddHand()) && (21 - deck.devcpuaddHand()) < 0) { //announce win or loss
-            System.out.println(player.getPlayerID() + " WINS2!"); // PROBLEM doenst work if integer is negative
+            System.out.println(player.getPlayerID() + " WINS!"); // PROBLEM doenst work if integer is negative
         } else if (deck.paddHand() == deck.devcpuaddHand()) {
             System.out.println("PUSH!");
         } else if ((deck.paddHand() < deck.devcpuaddHand()) && deck.paddHand() <= 21 && deck.devcpuaddHand() <= 21 ){
