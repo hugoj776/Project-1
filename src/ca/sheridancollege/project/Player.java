@@ -2,7 +2,7 @@
  * SYST 17796 Project Winter 2019 Base code.
  * Students can modify and extend to implement their game.
  * Add your name as a modifier and the date!
-  * Modified by: Jonathan Hugo
+ * Modified by: Jonathan Hugo
  *              Gavin Da Silva
  *              Ishita Ishita
  *              Sheril Garg

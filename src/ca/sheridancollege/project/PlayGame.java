@@ -1,11 +1,12 @@
-//this class is the main method being the ui of the game
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- *
- * Name: Jonathan Hugo
- * date: feb/12th/2020
+/**
+ * SYST 17796 Project Winter 2019 Base code.
+ * Students can modify and extend to implement their game.
+ * Add your name as a modifier and the date!
+ * Modified by: Jonathan Hugo
+ *              Gavin Da Silva
+ *              Ishita Ishita
+ *              Sheril Garg
+ * date: feb/12th/2020 
  */
 package ca.sheridancollege.project;
 
